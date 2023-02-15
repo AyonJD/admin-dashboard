@@ -1,6 +1,11 @@
 /* Range slider */
 :root {
     --range-thumb-size: 36px;
+
+    /* Colors */
+    --primary_color: #E2136E;
+    --secondary_color: #fff;
+    --asset_color: #000;
 }
 
 input[type=range] {
@@ -10,7 +15,7 @@ input[type=range] {
     height: 6px;
     margin-top: (--range-thumb-size - 6px) * 0.5;
     margin-bottom: (--range-thumb-size - 6px) * 0.5;
-    --thumb-size: #{--range-thumb-size};  
+    --thumb-size: #{--range-thumb-size};
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -24,7 +29,7 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     cursor: pointer;
     height: --range-thumb-size;
-    width: --range-thumb-size;        
+    width: --range-thumb-size;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -37,7 +42,7 @@ input[type=range]::-moz-range-thumb {
     border-radius: 50%;
     cursor: pointer;
     height: --range-thumb-size;
-    width: --range-thumb-size;    
+    width: --range-thumb-size;
 }
 
 input[type=range]::-ms-thumb {
@@ -54,4 +59,58 @@ input[type=range]::-ms-thumb {
 
 input[type=range]::-moz-focus-outer {
     border: 0;
+}
+
+.bg_bkash {
+    background: #E2136E;
+}
+
+.text_bkash {
+    color: #E2136E;
+}
+
+.active_menu {
+    background: #E2136E;
+    transition: all 0.3s ease-in-out;
+}
+
+.customInputClass {
+    transition: all 150ms ease-in-out;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.01), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border: 1px solid #dbdbdb !important;
+}
+
+.flag-dropdown {
+    border: 1px solid #dbdbdb !important;
+}
+
+.customInputClass:focus {
+    outline: none;
+    border: 1px solid #000;
+    box-shadow: 0 0 0 0.2rem rgb(0, 123, 255);
+}
+
+.animate-spin {
+    margin-right: 7px;
+    top: 2px;
+    animation: spin 1s infinite linear;
+}
+
+.otp-container input {
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    cursor: text;
+}
+
+.otp-container input:focus {
+    outline: none;
+    border: 1px solid rgb(0, 123, 255);
+}
+
+.handle_top_padding {
+    padding-top: 0 !important;
+}
+
+.height_handle {
+    min-height: calc(100vh - 150px) !important;
 }

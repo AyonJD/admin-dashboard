@@ -2,110 +2,176 @@ import React, { useState } from 'react';
 
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
-import WelcomeBanner from '../../partials/dashboard/WelcomeBanner';
-import DashboardAvatars from '../../partials/dashboard/DashboardAvatars';
-import FilterButton from '../../partials/actions/FilterButton';
-import Datepicker from '../../partials/actions/Datepicker';
-import DashboardCard01 from '../../partials/dashboard/DashboardCard01';
-import DashboardCard02 from '../../partials/dashboard/DashboardCard02';
-import DashboardCard03 from '../../partials/dashboard/DashboardCard03';
-import DashboardCard04 from '../../partials/dashboard/DashboardCard04';
-import DashboardCard05 from '../../partials/dashboard/DashboardCard05';
-import DashboardCard06 from '../../partials/dashboard/DashboardCard06';
-import DashboardCard07 from '../../partials/dashboard/DashboardCard07';
-import DashboardCard08 from '../../partials/dashboard/DashboardCard08';
-import DashboardCard09 from '../../partials/dashboard/DashboardCard09';
-import DashboardCard10 from '../../partials/dashboard/DashboardCard10';
-import DashboardCard11 from '../../partials/dashboard/DashboardCard11';
-import DashboardCard12 from '../../partials/dashboard/DashboardCard12';
-import DashboardCard13 from '../../partials/dashboard/DashboardCard13';
-import Banner from '../../partials/Banner';
+import CardBalance from '../../partials/Cards/UserCard/CardBalance';
+import MenuCard from '../../partials/Cards/UserCard/MenuCard';
+import CardAbout from '../../partials/Cards/UserCard/CardAbout';
+import Footer from '../../partials/Footer';
 
 function Dashboard() {
+	const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+	const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+	// Function to get the window width in pixels
+	function getWindowWidth() {
+		return window.innerWidth;
+	}
 
-  return (
-    <div className="flex h-screen overflow-hidden">
+	// Listen for changes to the window size
+	window.addEventListener("resize", function () {
+		// Set the window width to the state
+		setWindowWidth(getWindowWidth());
+	});
 
-      {/* Sidebar */}
-      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+	return (
+		<div className="flex overflow-hidden">
 
-      {/* Content area */}
-      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+			{/* Sidebar */}
+			<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-        {/*  Site header */}
-        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+			{/* Content area */}
+			<div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
 
-        <main>
-          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+				{/*  Site header */}
+				<Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-            {/* Welcome banner */}
-            <WelcomeBanner />
+				<main className='height_handle'>
+					<div className="px-4 sm:px-6 lg:px-8 w-full max-w-9xl mx-auto">
 
-            {/* Dashboard actions */}
-            <div className="sm:flex sm:justify-between sm:items-center mb-8">
+						<>
+							<div className="relative">
+								{/* Header */}
+								<>
+									<div className="relative mt-5">
+										<div className={` items-center ${windowWidth < 550 ? "" : 'flex'}`}>
+										<div className={` px-4 mx-auto md:px-10 ${(windowWidth < 1280 && windowWidth > 550) ? "w-1/2" : windowWidth < 550 ? "w-full" : 'w-1/2'}`}>
+											<CardBalance />
+											</div>
+											
+											<div className={` px-4 mx-auto md:px-10 ${(windowWidth < 1280 && windowWidth > 550) ? "w-1/2" : windowWidth < 550 ? "w-full" : 'w-1/2'}`}>
+											<CardBalance />
+										</div>
+										</div>
+										<div className={`px-4 md:px-10 mx-auto w-full `}>
+											<div>
+												{/* Card stats */}
+												{
+													windowWidth > 1140 ? (
+														<>
+															<div className=" flex justify-between">
+																<div className={`w-2/12 px-4`}>
+																	<MenuCard
+																		statSubtitle="Bank Transfer"
+																		statUrl="/dashboard/bank-transfer"
+																		statIconName="fas fa-university"
+																		statIconColor="bg-pink-500"
+																	/>
+																</div>
+																<div className={`w-2/12 px-4`}>
+																	<MenuCard
+																		statSubtitle="Cash Out"
+																		statUrl="/dashboard/cashout"
+																		statIconName="fas fa-hand-holding-usd"
+																		statIconColor="bg-orange-500"
+																	/>
+																</div>
+																<div className={`w-2/12 px-4`}>
+																	<MenuCard
+																		statSubtitle="Send Money"
+																		statUrl="#"
+																		statIconName="fas fa-share-square"
+																		statIconColor="bg-red-500"
+																	/>
+																</div>
+																<div className={`w-2/12 px-4`}>
+																	<MenuCard
+																		statSubtitle="Deposit"
+																		statUrl="/dashboard/deposit"
+																		statIconName="fas fa-donate"
+																		statIconColor="bg-blue-500"
+																	/>
+																</div>
+																<div className={`w-2/12 px-4`}>
+																	<MenuCard
+																		statSubtitle="Payment"
+																		statUrl="/dashboard/payment"
+																		statIconName="fas fa-money-check-alt"
+																		statIconColor="bg-emerald-500"
+																	/>
+																</div>
+															</div>
+														</>
+													) : (
+														<>
+															<div className="flex flex-wrap">
+																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-6/12"}`}>
+																	<MenuCard
+																		statSubtitle="Bank Transfer"
+																		statUrl="/dashboard/bank-transfer"
+																		statIconName="fas fa-university"
+																		statIconColor="bg-pink-500"
+																	/>
+																</div>
+																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-6/12"}`}>
+																	<MenuCard
+																		statSubtitle="Cash Out"
+																		statUrl="/dashboard/cashout"
+																		statIconName="fas fa-hand-holding-usd"
+																		statIconColor="bg-orange-500"
+																	/>
+																</div>
 
-              {/* Left: Avatars */}
-              <DashboardAvatars />
+															</div>
 
-              {/* Right: Actions */}
-              <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-                {/* Filter button */}
-                <FilterButton />
-                {/* Datepicker built with flatpickr */}
-                <Datepicker />
-                {/* Add view button */}
-                <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
-                    <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
-                        <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                    </svg>
-                    <span className="hidden xs:block ml-2">Add view</span>
-                </button>                
-              </div>
+															<div className="flex flex-wrap">
+																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-4/12"}`}>
+																	<MenuCard
+																		statSubtitle="Send Money"
+																		statUrl="#"
+																		statIconName="fas fa-share-square"
+																		statIconColor="bg-red-500"
+																	/>
+																</div>
+																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-4/12"}`}>
+																	<MenuCard
+																		statSubtitle="Deposit"
+																		statUrl="/dashboard/deposit"
+																		statIconName="fas fa-donate"
+																		statIconColor="bg-blue-500"
+																	/>
+																</div>
+																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-4/12"}`}>
+																	<MenuCard
+																		statSubtitle="Payment"
+																		statUrl="/dashboard/payment"
+																		statIconName="fas fa-money-check-alt"
+																		statIconColor="bg-blue-500"
+																	/>
+																</div>
+															</div>
+														</>
+													)
+												}
 
-            </div>
+											</div>
+										</div>
+									</div>
+								</>
+								{/* <div className="px-4 md:px-10 mx-auto w-full">
+									<div className="flex flex-wrap">
+										<div className="w-full mb-12 xl:mb-0 px-4">
+											<CardAbout />
+										</div>
+									</div>
+								</div> */}
+							</div>
+						</>
 
-            {/* Cards */}
-            <div className="grid grid-cols-12 gap-6">
-
-              {/* Line chart (Acme Plus) */}
-              <DashboardCard01 />
-              {/* Line chart (Acme Advanced) */}
-              <DashboardCard02 />
-              {/* Line chart (Acme Professional) */}
-              <DashboardCard03 />
-              {/* Bar chart (Direct vs Indirect) */}
-              <DashboardCard04 />
-              {/* Line chart (Real Time Value) */}
-              <DashboardCard05 />
-              {/* Doughnut chart (Top Countries) */}
-              <DashboardCard06 />
-              {/* Table (Top Channels) */}
-              <DashboardCard07 />
-              {/* Line chart (Sales Over Time) */}
-              <DashboardCard08 />
-              {/* Stacked bar chart (Sales VS Refunds) */}
-              <DashboardCard09 />
-              {/* Card (Customers) */}
-              <DashboardCard10 />
-              {/* Card (Reasons for Refunds) */}
-              <DashboardCard11 />
-              {/* Card (Recent Activity) */}
-              <DashboardCard12 />
-              {/* Card (Income/Expenses) */}
-              <DashboardCard13 />
-              
-            </div>
-
-          </div>
-        </main>
-
-        <Banner />
-
-      </div>
-    </div>
-  );
+					</div>
+				</main>
+				<Footer />
+			</div>
+		</div>
+	);
 }
 
 export default Dashboard;
