@@ -111,7 +111,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <span className="hidden lg:block lg:sidebar-expanded:hidden 2xl:hidden text-center w-6" aria-hidden="true">
                 •••
               </span>
-              <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">Pages</span>
+              {/* <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">Pages</span> */}
             </h3>
             <ul className="mt-3">
               {/* Dashboard */}
@@ -131,7 +131,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                            {/* <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
                               <path
                                 className={`fill-current ${
                                   pathname === '/' || pathname.includes('dashboard') ? 'text-indigo-500' : 'text-slate-400'
@@ -150,7 +150,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 }`}
                                 d="M12 15c-1.654 0-3-1.346-3-3 0-.462.113-.894.3-1.285L6 6l4.714 3.301A2.973 2.973 0 0112 9c1.654 0 3 1.346 3 3s-1.346 3-3 3z"
                               />
-                            </svg>
+                            </svg> */}
                             <NavLink
                               end
                               to="/"
