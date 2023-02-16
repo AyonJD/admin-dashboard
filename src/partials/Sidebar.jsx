@@ -117,7 +117,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               }
                             >
                               <span className='inline-block -mb-[5px] text-xl'>
-                                <MdAccountCircle /> {/* Icon */}
+                                <i class="fa-solid fa-table-columns"></i> {/* Icon */}
                               </span>
                               <span className="inline-block text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Account Details
@@ -161,7 +161,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               }
                             >
                               <span className='inline-block -mb-[5px] text-xl'>
-                                <MdAccountCircle /> {/* Icon */}
+                                <i className="fas fa-share-square"></i> {/* Icon */}
                               </span>
                               <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Send Money
@@ -205,7 +205,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               }
                             >
                               <span className='inline-block -mb-[5px] text-xl'>
-                                <MdAccountCircle /> {/* Icon */}
+                                <i className="fas fa-university"></i> {/* Icon */}
                               </span>
                               <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Bank Transfer
@@ -249,7 +249,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               }
                             >
                               <span className='inline-block -mb-[5px] text-xl'>
-                                <MdAccountCircle /> {/* Icon */}
+                              <i className="fas fa-hand-holding-usd"></i> {/* Icon */}
                               </span>
                               <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Cash Out
@@ -293,7 +293,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               }
                             >
                               <span className='inline-block -mb-[5px] text-xl'>
-                                <MdAccountCircle /> {/* Icon */}
+                                <i className="fas fa-money-check-alt"></i> {/* Icon */}
                               </span>
                               <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Payment
@@ -337,7 +337,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               }
                             >
                               <span className='inline-block -mb-[5px] text-xl'>
-                                <MdAccountCircle /> {/* Icon */}
+                                <i className="fas fa-donate"></i> {/* Icon */}
                               </span>
                               <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                 Deposti
