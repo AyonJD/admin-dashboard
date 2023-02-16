@@ -74,6 +74,10 @@ input[type=range]::-moz-focus-outer {
     transition: all 0.3s ease-in-out;
 }
 
+.border_bkash {
+    border: 10px solid #E2136E;
+}
+
 .customInputClass {
     transition: all 150ms ease-in-out;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.01), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -113,4 +117,12 @@ input[type=range]::-moz-focus-outer {
 
 .height_handle {
     min-height: calc(100vh - 150px) !important;
+}
+
+.custom_border {
+    border-bottom: 1px solid #dbdbdb !important;
+}
+
+.custom_width {
+    width: 20% ;
 }

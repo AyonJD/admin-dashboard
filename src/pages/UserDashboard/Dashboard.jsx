@@ -44,7 +44,7 @@ function Dashboard() {
 									<div className="relative mt-5">
 										<div className={` items-center ${windowWidth < 550 ? "" : 'flex'}`}>
 										<div className={` px-4 mx-auto md:px-10 ${(windowWidth < 1280 && windowWidth > 550) ? "w-1/2" : windowWidth < 550 ? "w-full" : 'w-1/2'}`}>
-											<CardBalance />
+											<CardAbout />
 											</div>
 											
 											<div className={` px-4 mx-auto md:px-10 ${(windowWidth < 1280 && windowWidth > 550) ? "w-1/2" : windowWidth < 550 ? "w-full" : 'w-1/2'}`}>
@@ -55,10 +55,10 @@ function Dashboard() {
 											<div>
 												{/* Card stats */}
 												{
-													windowWidth > 1140 ? (
+													windowWidth > 1222 ? (
 														<>
 															<div className=" flex justify-between">
-																<div className={`w-2/12 px-4`}>
+																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Bank Transfer"
 																		statUrl="/dashboard/bank-transfer"
@@ -66,7 +66,7 @@ function Dashboard() {
 																		statIconColor="bg-pink-500"
 																	/>
 																</div>
-																<div className={`w-2/12 px-4`}>
+																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Cash Out"
 																		statUrl="/dashboard/cashout"
@@ -74,7 +74,7 @@ function Dashboard() {
 																		statIconColor="bg-orange-500"
 																	/>
 																</div>
-																<div className={`w-2/12 px-4`}>
+																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Send Money"
 																		statUrl="#"
@@ -82,7 +82,7 @@ function Dashboard() {
 																		statIconColor="bg-red-500"
 																	/>
 																</div>
-																<div className={`w-2/12 px-4`}>
+																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Deposit"
 																		statUrl="/dashboard/deposit"
@@ -90,7 +90,7 @@ function Dashboard() {
 																		statIconColor="bg-blue-500"
 																	/>
 																</div>
-																<div className={`w-2/12 px-4`}>
+																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Payment"
 																		statUrl="/dashboard/payment"
