@@ -27,6 +27,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/send-money" element={<Dashboard />} />
         <Route exact path="/bank-transfer" element={<BankTransfer />} />
       </Routes>
     </>

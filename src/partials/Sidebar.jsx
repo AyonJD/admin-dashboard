@@ -88,6 +88,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         {/* Links */}
         <div className="">
           {/* Pages group */}
+          {/* Account Details----------------------> */}
           <div>
             <ul className="mt-3">
               {/* Dashboard */}
@@ -132,8 +133,52 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </ul>
           </div>
 
+           {/* Send Money-------------------------------> */}
            <div>
-           
+            <ul className="mt-3">
+              {/* Dashboard */}
+              <SidebarLinkGroup activecondition={pathname === '/send-money' || pathname.includes('send-money')}>
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <a
+                        href="#0"
+                        className={({ isActive }) =>
+                        `block truncate transition duration-150 ${isActive ? 'text-gray-700' : 'text-white'}`
+                      }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <NavLink
+                              end
+                              to="/send-money"
+                              className={({ isActive }) =>
+                                'block transition duration-150 truncate ' + (isActive ? 'text-white' : 'text-gray-700')
+                              }
+                            >
+                              <span className='inline-block -mb-[5px] text-xl'>
+                                <MdAccountCircle /> {/* Icon */}
+                              </span>
+                              <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                Send Money
+                              </span>
+                            </NavLink>
+                          </div>
+                        </div>
+                      </a>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+            </ul>
+          </div>
+
+          {/* Bank Transfer------------------------> */}
+           <div>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/bank-transfer' || pathname.includes('bank-transfer')}>
@@ -175,6 +220,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </SidebarLinkGroup>
             </ul>
           </div>
+
+         
         </div>
 
         {/* Expand / collapse button */}
