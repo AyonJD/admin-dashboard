@@ -86,10 +86,10 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         </div>
 
         {/* Links */}
-        <div className="">
+        <div>
           {/* Pages group */}
           {/* Account Details----------------------> */}
-          <div>
+          <div onClick={() => setSidebarOpen(false)}>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/' || pathname.includes('dashboard')}>
@@ -134,7 +134,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
            {/* Send Money-------------------------------> */}
-           <div>
+           <div onClick={() => setSidebarOpen(false)}>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/send-money' || pathname.includes('send-money')}>
@@ -178,7 +178,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           {/* Bank Transfer------------------------> */}
-           <div>
+           <div onClick={() => setSidebarOpen(false)}>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/bank-transfer' || pathname.includes('bank-transfer')}>
@@ -222,7 +222,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           {/* Cash out-------------------------------> */}
-          <div>
+          <div onClick={() => setSidebarOpen(false)}>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/cash-out' || pathname.includes('cash-out')}>
@@ -266,7 +266,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           {/* Payment--------------------------------> */}
-          <div>
+          <div onClick={() => setSidebarOpen(false)}>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/payment' || pathname.includes('payment')}>
@@ -310,7 +310,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           {/* Deposti--------------------------> */}
-          <div>
+          <div onClick={() => setSidebarOpen(false)}>
             <ul className="mt-3">
               {/* Dashboard */}
               <SidebarLinkGroup activecondition={pathname === '/deposit' || pathname.includes('deposit')}>

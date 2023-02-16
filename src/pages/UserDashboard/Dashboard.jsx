@@ -9,7 +9,7 @@ import Footer from '../../partials/Footer';
 
 function Dashboard() {
 	const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
-	const [sidebarOpen, setSidebarOpen] = useState(true);
+	const [sidebarOpen, setSidebarOpen] = useState(false);
 
 	// Function to get the window width in pixels
 	function getWindowWidth() {
