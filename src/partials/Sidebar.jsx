@@ -265,6 +265,94 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </ul>
           </div>
 
+          {/* Payment--------------------------------> */}
+          <div>
+            <ul className="mt-3">
+              {/* Dashboard */}
+              <SidebarLinkGroup activecondition={pathname === '/payment' || pathname.includes('payment')}>
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <a
+                        href="#0"
+                        className={({ isActive }) =>
+                        `block truncate transition duration-150 ${isActive ? 'text-gray-700' : 'text-white'}`
+                      }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <NavLink
+                              end
+                              to="/payment"
+                              className={({ isActive }) =>
+                                'block transition duration-150 truncate ' + (isActive ? 'text-white' : 'text-gray-700')
+                              }
+                            >
+                              <span className='inline-block -mb-[5px] text-xl'>
+                                <MdAccountCircle /> {/* Icon */}
+                              </span>
+                              <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                Payment
+                              </span>
+                            </NavLink>
+                          </div>
+                        </div>
+                      </a>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+            </ul>
+          </div>
+
+          {/* Deposti--------------------------> */}
+          <div>
+            <ul className="mt-3">
+              {/* Dashboard */}
+              <SidebarLinkGroup activecondition={pathname === '/deposit' || pathname.includes('deposit')}>
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <a
+                        href="#0"
+                        className={({ isActive }) =>
+                        `block truncate transition duration-150 ${isActive ? 'text-gray-700' : 'text-white'}`
+                      }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <NavLink
+                              end
+                              to="/deposit"
+                              className={({ isActive }) =>
+                                'block transition duration-150 truncate ' + (isActive ? 'text-white' : 'text-gray-700')
+                              }
+                            >
+                              <span className='inline-block -mb-[5px] text-xl'>
+                                <MdAccountCircle /> {/* Icon */}
+                              </span>
+                              <span className="text-sm ml-2 font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                Deposti
+                              </span>
+                            </NavLink>
+                          </div>
+                        </div>
+                      </a>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+            </ul>
+          </div>
+
          
         </div>
 

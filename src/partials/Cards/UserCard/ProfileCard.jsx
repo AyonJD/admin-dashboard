@@ -43,8 +43,8 @@ const ProfileCard = () => {
                         <div className="w-full px-4 text-center">
                             <div className="flex flex-col justify-center py-4 lg:pt-4 pt-8">
                                 <div className="mr-4 p-3 text-center">
-                                    <span className="text-md font-bold text-bkash">Current Balance</span>
-                                    <span className="text-2xl font-bold block uppercase tracking-wide text-bkash">
+                                    <span className="text-md font-bold text_bkash">Current Balance</span>
+                                    <span className="text-xl font-bold block uppercase tracking-wide text_bkash">
                                         1000000 BDT
                                     </span>
                                 </div>
@@ -53,7 +53,7 @@ const ProfileCard = () => {
                     </div>
                     <div className="text-center">
                         <h3 className="text-xl font-semibold leading-normal mb-2 text-gray-700 ">
-                            Jenna Stones
+                            Ayon Jodder
                         </h3>
                         <div className="text-sm leading-normal mt-0 mb-2 text-gray-400 font-bold uppercase">
                             <i className="fas fa-map-marker-alt mr-2 text-lg text-gray-400"></i>{" "}
