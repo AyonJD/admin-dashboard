@@ -61,7 +61,7 @@ function Dashboard() {
 																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Bank Transfer"
-																		statUrl="/dashboard/bank-transfer"
+																		statUrl="/bank-transfer"
 																		statIconName="fas fa-university"
 																		statIconColor="bg-pink-500"
 																	/>
@@ -69,7 +69,7 @@ function Dashboard() {
 																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Cash Out"
-																		statUrl="/dashboard/cashout"
+																		statUrl="/cashout"
 																		statIconName="fas fa-hand-holding-usd"
 																		statIconColor="bg-orange-500"
 																	/>
@@ -85,7 +85,7 @@ function Dashboard() {
 																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Deposit"
-																		statUrl="/dashboard/deposit"
+																		statUrl="/deposit"
 																		statIconName="fas fa-donate"
 																		statIconColor="bg-blue-500"
 																	/>
@@ -93,7 +93,7 @@ function Dashboard() {
 																<div className={`custom_width px-4`}>
 																	<MenuCard
 																		statSubtitle="Payment"
-																		statUrl="/dashboard/payment"
+																		statUrl="/payment"
 																		statIconName="fas fa-money-check-alt"
 																		statIconColor="bg-emerald-500"
 																	/>
@@ -106,7 +106,7 @@ function Dashboard() {
 																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-6/12"}`}>
 																	<MenuCard
 																		statSubtitle="Bank Transfer"
-																		statUrl="/dashboard/bank-transfer"
+																		statUrl="/bank-transfer"
 																		statIconName="fas fa-university"
 																		statIconColor="bg-pink-500"
 																	/>
@@ -114,7 +114,7 @@ function Dashboard() {
 																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-6/12"}`}>
 																	<MenuCard
 																		statSubtitle="Cash Out"
-																		statUrl="/dashboard/cashout"
+																		statUrl="/cashout"
 																		statIconName="fas fa-hand-holding-usd"
 																		statIconColor="bg-orange-500"
 																	/>
@@ -134,7 +134,7 @@ function Dashboard() {
 																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-4/12"}`}>
 																	<MenuCard
 																		statSubtitle="Deposit"
-																		statUrl="/dashboard/deposit"
+																		statUrl="/deposit"
 																		statIconName="fas fa-donate"
 																		statIconColor="bg-blue-500"
 																	/>
@@ -142,7 +142,7 @@ function Dashboard() {
 																<div className={` px-4 ${windowWidth < 573 ? "w-full" : "w-4/12"}`}>
 																	<MenuCard
 																		statSubtitle="Payment"
-																		statUrl="/dashboard/payment"
+																		statUrl="/payment"
 																		statIconName="fas fa-money-check-alt"
 																		statIconColor="bg-blue-500"
 																	/>
