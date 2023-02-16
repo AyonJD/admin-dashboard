@@ -10,6 +10,7 @@ import './css/style.css';
 import './charts/ChartjsConfig';
 import Dashboard from './pages/UserDashboard/Dashboard';
 import BankTransfer from './pages/UserDashboard/BankTransfer';
+import CashOut from './pages/UserDashboard/CashOut';
 
 // Import pages
 
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/send-money" element={<Dashboard />} />
         <Route exact path="/bank-transfer" element={<BankTransfer />} />
+        <Route exact path="/cash-out" element={<CashOut />} />
       </Routes>
     </>
   );

@@ -155,7 +155,7 @@ const CashOutForm = ({ title }) => {
                         <div className="w-full lg:w-6/12 px-4">
                             <div className="relative w-full mb-3">
                                 <button
-                                    className="bg-bkash text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                                    className="bg_bkash text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                                     type="button"
                                 >
                                     Submit
