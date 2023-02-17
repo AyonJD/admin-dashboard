@@ -12,6 +12,8 @@ import Dashboard from './pages/UserDashboard/Dashboard';
 import BankTransfer from './pages/UserDashboard/BankTransfer';
 import CashOut from './pages/UserDashboard/CashOut';
 import Deposit from './pages/UserDashboard/Deposit';
+import Login from './pages/Auth/Login';
+import { Toaster } from 'react-hot-toast';
 
 // Import pages
 
@@ -34,7 +36,12 @@ function App() {
         <Route exact path="/cash-out" element={<CashOut />} />
         <Route exact path="/payment" element={<Dashboard />} />
         <Route exact path="/deposit" element={<Deposit />} />
+
+        {/* Auth */}
+        <Route exact path="/auth/login" element={<Login />} />
       </Routes>
+
+      <Toaster />
     </>
   );
 }

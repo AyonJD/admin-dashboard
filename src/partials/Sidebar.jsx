@@ -1,17 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import SidebarLinkGroup from './SidebarLinkGroup';
 
 // Icon Import
 import {MdAccountCircle} from 'react-icons/md';
+import { isAuthenticated, logout } from '../utils/authUtils';
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const user = null;
   const location = useLocation();
   const { pathname } = location;
+  const navigate = useNavigate();
 
   const trigger = useRef(null);
   const sidebar = useRef(null);
+
+  // Check if user is logged in
+  useEffect(() => {
+    if (!isAuthenticated(user)) {
+      logout(navigate);
+    }
+  }, []);
 
   // const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
