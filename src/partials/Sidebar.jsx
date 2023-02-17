@@ -92,7 +92,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </butto>
           {/* Logo */}
           <NavLink end to="/" className="block ">
-           <h1 className='text-2xl font-extrabold text-gray-700'>CBT</h1>
+           <h1 className='text-2xl font-extrabold text-gray-700'>WBT</h1>
           </NavLink>
         </div>
 

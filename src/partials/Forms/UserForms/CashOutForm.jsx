@@ -132,7 +132,7 @@ const CashOutForm = ({ title }) => {
                                 <input
                                     type="number"
                                     className="customInputClass  border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    defaultValue="000"
+                                    placeholder='Enter Amount'
                                 />
                             </div>
                         </div>
@@ -147,7 +147,7 @@ const CashOutForm = ({ title }) => {
                                 <input
                                     type="password"
                                     className="customInputClass border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    defaultValue="Jesse"
+                                    placeholder="Enter Password"
                                 />
                             </div>
                         </div>

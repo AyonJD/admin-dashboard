@@ -37,7 +37,7 @@ const DepositForm = ({ title }) => {
                                 <input
                                     type="number"
                                     className="border-0 px-3 py-3 customInputClass placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    defaultValue="000"
+                                    placeholder='Enter Amount'
                                 />
                             </div>
                         </div>
@@ -52,7 +52,7 @@ const DepositForm = ({ title }) => {
                                 <input
                                     type="password"
                                     className="border-0 px-3 py-3 customInputClass placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    defaultValue="Jesse"
+                                    placeholder="Enter Password"
                                 />
                             </div>
                         </div>

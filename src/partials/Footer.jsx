@@ -14,7 +14,7 @@ function Footer() {
                                     href="#"
                                     className="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
                                 >
-                                    Central Bank Of Thiland
+                                    World Bank of Thailand
                                 </a>
                             </div>
                         </div>
