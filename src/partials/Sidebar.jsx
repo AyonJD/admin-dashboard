@@ -6,9 +6,10 @@ import SidebarLinkGroup from './SidebarLinkGroup';
 // Icon Import
 import {MdAccountCircle} from 'react-icons/md';
 import { isAuthenticated, logout } from '../utils/authUtils';
+import { loadStorage } from '../utils/localStorage';
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
-  const user = null;
+  const user = loadStorage("payment_user");
   const location = useLocation();
   const { pathname } = location;
   const navigate = useNavigate();

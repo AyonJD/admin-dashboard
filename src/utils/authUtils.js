@@ -1,7 +1,7 @@
 import { delStorage } from "./localStorage";
 
 export const isAuthenticated = (user) => {
-    if (user && user.token) {
+    if (user && user._tokenResponse.idToken) {
         return true;
     }
     return false;
@@ -15,7 +15,7 @@ export const isAuthorized = (error) => {
 };
 
 export const logout = (navigate) => {
-    delStorage("user");
+    delStorage("payment_user");
     delStorage("token");
     navigate("/auth/login");
 };

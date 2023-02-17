@@ -10,14 +10,15 @@ import { toast } from "react-hot-toast";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { ImSpinner9 } from "react-icons/im";
 import { auth } from "../../Config/firebase.config";
+import { saveStorage } from "../../utils/localStorage";
 
 
 const Login = () => {
     const [phone, setPhone] = useState("");
     const [otp, setOtp] = useState("");
     const [loading, setLoading] = useState(false);
-    const [showButton, setShowButton] = useState(true);
-    const [showOTP, setShowOTP] = useState(true);
+    const [showButton, setShowButton] = useState(false);
+    const [showOTP, setShowOTP] = useState(false);
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     // Captcha verifier
@@ -72,8 +73,7 @@ const Login = () => {
         window.confirmationResult
             .confirm(otp)
             .then(async (res) => {
-                // console.log(res);
-                // localStorage.setItem("user", JSON.stringify(res));
+                saveStorage("payment_user", res)
                 setUser(res.user);
                 setLoading(false);
                 toast.success("OTP verified successfully!")
@@ -139,7 +139,7 @@ const Login = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <form>
+                                            <form className="w-[90%]">
                                                 <div className="relative w-full mb-3">
                                                     <label
                                                         className="block uppercase text-gray-600 text-xs font-bold mb-2"
