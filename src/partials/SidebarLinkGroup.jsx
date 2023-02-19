@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SidebarLinkGroup({
   children,
@@ -6,6 +7,7 @@ function SidebarLinkGroup({
 }) {
 
   const [open, setOpen] = useState(activecondition);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(!open);

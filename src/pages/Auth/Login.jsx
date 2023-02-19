@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -11,16 +11,20 @@ import { BsFillShieldLockFill } from "react-icons/bs";
 import { ImSpinner9 } from "react-icons/im";
 import { auth } from "../../Config/firebase.config";
 import { saveStorage } from "../../utils/localStorage";
+import { getUserByPhone } from "../../utils/dbFuncs";
+import { useForm } from "react-hook-form";
 
 
 const Login = () => {
+    const { register, formState: { errors }, handleSubmit, trigger, reset } = useForm();
     const [phone, setPhone] = useState("");
     const [otp, setOtp] = useState("");
     const [loading, setLoading] = useState(false);
-    const [showButton, setShowButton] = useState(false);
     const [showOTP, setShowOTP] = useState(false);
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+
+
     // Captcha verifier
     const onCaptchVerify = () => {
         if (!window.recaptchaVerifier) {
@@ -39,13 +43,20 @@ const Login = () => {
     }
 
     // SignIn Handler
-    const onSignIn = () => {
+    const onSignIn = async (data) => {
+        const user = await getUserByPhone("+" + phone);
+
+        if (!user) return toast.error("User not found!");
+        if (user?.data?.password !== data.password) return toast.error("Password not matched!");
+        setUser(user.data);
+        
         setLoading(true);
         onCaptchVerify();
 
         const appVerifier = window.recaptchaVerifier;
 
         const formatPhone = "+" + phone;
+        console.log(formatPhone, phone)
 
         if (!phone) {
             toast.error("Please enter your phone number!");
@@ -73,15 +84,19 @@ const Login = () => {
         window.confirmationResult
             .confirm(otp)
             .then(async (res) => {
-                saveStorage("payment_user", res)
-                setUser(res.user);
+                saveStorage("payment_user", {...user, token: res._tokenResponse.idToken});
                 setLoading(false);
                 toast.success("OTP verified successfully!")
 
-                navigate("/");
+                if (user?.data?.role === "admin") {
+                    return navigate("/admin/create-user");
+                } else {
+                    navigate("/");
+                }
+                
             })
             .catch((err) => {
-                console.log(err);
+                toast.error('Wrong OTP!')
                 setLoading(false);
             });
     };
@@ -139,7 +154,7 @@ const Login = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <form className="w-[90%]">
+                                                <form onSubmit={handleSubmit(onSignIn)} className="w-[90%]">
                                                 <div className="relative w-full mb-3">
                                                     <label
                                                         className="block uppercase text-gray-600 text-xs font-bold mb-2"
@@ -165,7 +180,20 @@ const Login = () => {
                                                         type="password"
                                                         className="customInputClass border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                                         placeholder="Password"
+                                                    
+                                                        {...register("password", {
+                                                            required: 'Password is required',
+                                                            minLength: {
+                                                                value: 6, message: 'Minimum 6 character required'
+                                                            }
+                                                        })}
+                    
+                                                        onKeyUp={() => {
+                                                            trigger('password')
+                                                        }}
                                                     />
+                    
+                                                    <small className='text-[#FF4B2B] custom_font custom_font_size'>{errors?.password?.message}</small>
                                                 </div>
                                                 {/* <div>
                                                     <label className="inline-flex items-center cursor-pointer">
@@ -182,9 +210,8 @@ const Login = () => {
 
                                                 <div className="text-center mt-6">
                                                     <button
-                                                        onClick={onSignIn}
                                                         className="bg_bkash flex gap-1 items-center justify-center text-white active:bg-gray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                                                        type="button"
+                                                        type="submit"
                                                     >
                                                         {loading && (
                                                             <ImSpinner9 size={15} className=" animate-spin" />

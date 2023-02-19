@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { toast } from 'react-hot-toast';
-import profileImage from '../../../images/user-36-01.jpg';
+import { loadStorage } from '../../../utils/localStorage';
 
 const ProfileCard = () => {
   const [address, setAddress] = useState('');
   const [error, setError] = useState(null);
+  const user = loadStorage("payment_user");
   
   useEffect(() => {
     const geolocation = navigator.geolocation;
@@ -50,7 +50,7 @@ const ProfileCard = () => {
               <div className="relative">
                 <img
                   alt="..."
-                  src={profileImage}
+                  src={user?.image}
                   className="shadow-xl rounded-full w-[150px] align-middle border-none -mt-16 "
                 />
               </div>
@@ -60,7 +60,7 @@ const ProfileCard = () => {
                 <div className="mr-4 p-3 text-center">
                   <span className="text-md font-bold text_bkash">Current Balance</span>
                   <span className="text-xl font-bold block uppercase tracking-wide text_bkash">
-                    1000000 BDT
+                    {`1000000 ${ user?.currency}` }
                   </span>
                 </div>
               </div>
@@ -68,7 +68,7 @@ const ProfileCard = () => {
           </div>
           <div className="text-center">
             <h3 className="text-xl font-semibold leading-normal mb-2 text-gray-700 ">
-              Ayon Jodder
+              { user?.name}
             </h3>
             <div className="text-sm leading-normal mt-0 mb-2 text-gray-400 font-bold uppercase">
               <i className="fas fa-map-marker-alt mr-2 text-lg text-gray-400"></i>{" "}

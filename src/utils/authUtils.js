@@ -1,7 +1,7 @@
 import { delStorage } from "./localStorage";
 
 export const isAuthenticated = (user) => {
-    if (user && user._tokenResponse.idToken) {
+    if (user && user.token) {
         return true;
     }
     return false;

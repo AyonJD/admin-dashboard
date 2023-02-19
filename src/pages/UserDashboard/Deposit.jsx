@@ -26,8 +26,8 @@ const Deposit = () => {
                         <div className="px-4 sm:px-6 lg:px-8 w-full max-w-9xl mx-auto">
 
                             <div className='bg-bkash height_handle'>
-                                <div className="pt-6">
-                                    <Breadcrumb title="Deposit" userName="User Name" />
+                                <div className="pt-1 pb-2">
+                                    <Breadcrumb title="Deposit" />
                                 </div>
                                 <div className="flex flex-wrap items-center">
                                     <div className="w-full lg:w-8/12 px-4">

@@ -25,8 +25,8 @@ const BankTransfer = () => {
                         <div className="px-4 sm:px-6 lg:px-8 w-full max-w-9xl mx-auto">
                             <div className=' flex items-center'>
                                 <div className="flex flex-wrap">
-                                    <Breadcrumb title="Bank Transfer" userName="Ayon Jodder" />
-                                    <div className="w-full px-4">
+                                    <Breadcrumb title="Bank Transfer" />
+                                    <div className="w-full px-4 mt-2">
                                         <CashOutForm title="Bank Transfer" />
                                     </div>
                                 </div>

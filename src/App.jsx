@@ -7,13 +7,15 @@ import {
 
 import './css/style.css';
 
-import './charts/ChartjsConfig';
 import Dashboard from './pages/UserDashboard/Dashboard';
 import BankTransfer from './pages/UserDashboard/BankTransfer';
 import CashOut from './pages/UserDashboard/CashOut';
 import Deposit from './pages/UserDashboard/Deposit';
 import Login from './pages/Auth/Login';
 import { Toaster } from 'react-hot-toast';
+import CreateUser from './pages/AdminDashboard/CreateUser';
+import AllUser from './pages/AdminDashboard/AllUser';
+import EditUser from './pages/AdminDashboard/EditUser';
 
 // Import pages
 
@@ -30,12 +32,18 @@ function App() {
   return (
     <>
       <Routes>
+        {/* User layout */}
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/send-money" element={<Dashboard />} />
         <Route exact path="/bank-transfer" element={<BankTransfer />} />
         <Route exact path="/cash-out" element={<CashOut />} />
         <Route exact path="/payment" element={<Dashboard />} />
         <Route exact path="/deposit" element={<Deposit />} />
+
+        {/* Admin Layout */}
+        <Route exact path="/admin/create-user" element={<CreateUser />} />
+        <Route exact path="/admin/user-list" element={<AllUser />} />
+        <Route exact path="/admin/user-list/:uuid" element={<EditUser />} />
 
         {/* Auth */}
         <Route exact path="/auth/login" element={<Login />} />
